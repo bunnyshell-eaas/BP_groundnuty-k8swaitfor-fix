@@ -1,9 +1,4 @@
-# Fix for groundnuty permission issue
-Commands to run on each deployment containing k8s nuty: 
-```
-...
-runnerImage: 'alpine/k8s:1.22.15'
-   deploy:
+    deploy:
         - 'kustomize create --autodetect --recursive '
         # role -> metadata.namespace 
         # rolebinding -> subjects[0].namespace 
@@ -19,4 +14,3 @@ runnerImage: 'alpine/k8s:1.22.15'
         - ""
     stop:
         - ""
-```
