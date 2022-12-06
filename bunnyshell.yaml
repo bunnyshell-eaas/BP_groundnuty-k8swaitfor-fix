@@ -1,3 +1,8 @@
+-
+    kind: KubernetesManifest
+    version: v1
+    name: myapp
+    runnerImage: 'alpine/k8s:1.22.15'
     deploy:
         - 'kustomize create --autodetect --recursive '
         # role -> metadata.namespace 
@@ -14,3 +19,8 @@
         - ""
     stop:
         - ""
+    exportVariables:
+        - SERVICE_ENDPOINT
+    gitRepo: 'git://gitlab.com/bunnyshell-eaas/BP_groundnuty-k8swaitfor-fix.git'
+    gitBranch: main
+    gitApplicationPath: /
